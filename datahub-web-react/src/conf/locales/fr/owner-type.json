@@ -1,0 +1,18 @@
+{
+    "TECHNICAL_OWNER": {
+        "name": "Technical Owner",
+        "description": "Impliqué dans la production, la maintenance ou la distribution de l'actif."
+    },
+    "BUSINESS_OWNER": {
+        "name": "Business Owner",
+        "description": "Principaux intervenants ou experts du domaine associés à l'actif."
+    },
+    "DATA_STEWARD": {
+        "name": "Data Steward",
+        "description": "Participation à la gouvernance de l'actif."
+    },
+    "NONE": {
+        "name": "None",
+        "description": "Aucun type de propriété spécifié."
+    }
+}

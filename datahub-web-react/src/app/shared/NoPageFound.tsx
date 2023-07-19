@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'antd';
 import styled from 'styled-components';
 import { useHistory } from 'react-router';
+import {useTranslation} from 'react-i18next';
 
 const MainContainer = styled.div`
     height: 100vh;
@@ -50,6 +51,7 @@ const SubTitle = styled.h2`
 `;
 
 export const NoPageFound = () => {
+    const {t} = useTranslation('translation');
     const history = useHistory();
 
     const goToHomepage = () => {
@@ -66,8 +68,8 @@ export const NoPageFound = () => {
                         <Number>4</Number>
                     </NumberContainer>
                 </PageNotFoundTextContainer>
-                <SubTitle>The page your requested was not found,</SubTitle>
-                <Button onClick={goToHomepage}>Back to Home</Button>
+                <SubTitle>{t('error.pageNotFound')},</SubTitle>
+                <Button onClick={goToHomepage}>{t('common.backToHome')}</Button>
             </PageNotFoundContainer>
         </MainContainer>
     );

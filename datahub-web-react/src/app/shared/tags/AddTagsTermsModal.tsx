@@ -19,6 +19,7 @@ import { useGetRecommendations } from '../recommendation';
 import { FORBIDDEN_URN_CHARS_REGEX, handleBatchError } from '../../entity/shared/utils';
 import { TagTermLabel } from './TagTermLabel';
 import { ENTER_KEY_CODE } from '../constants';
+import {useTranslation} from 'react-i18next';
 
 export enum OperationType {
     ADD,
@@ -92,6 +93,7 @@ export default function EditTagTermsModal({
     defaultValues = [],
     onOkOverride,
 }: EditTagsModalProps) {
+    const {t} = useTranslation(['translation', 'entity']);
     const entityRegistry = useEntityRegistry();
     const [inputValue, setInputValue] = useState('');
     const [showCreateModal, setShowCreateModal] = useState(false);
@@ -260,7 +262,7 @@ export default function EditTagTermsModal({
             .then(({ errors }) => {
                 if (!errors) {
                     message.success({
-                        content: `Added ${type === EntityType.GlossaryTerm ? 'Terms' : 'Tags'}!`,
+                        content: t('crud.added', { addedName: type === EntityType.GlossaryTerm ? 'Terms' : 'Tags' }) + "!",
                         duration: 2,
                     });
                 }
@@ -268,7 +270,7 @@ export default function EditTagTermsModal({
             .catch((e) => {
                 message.destroy();
                 message.error(
-                    handleBatchError(urns, e, { content: `Failed to add: \n ${e.message || ''}`, duration: 3 }),
+                    handleBatchError(urns, e, { content: `${t('error.addError')}: \n ${e.message || ''}`, duration: 3 }),
                 );
             })
             .finally(() => {
@@ -290,7 +292,7 @@ export default function EditTagTermsModal({
             .then(({ errors }) => {
                 if (!errors) {
                     message.success({
-                        content: `Added ${type === EntityType.GlossaryTerm ? 'Terms' : 'Tags'}!`,
+                        content: t('crud.added', { addedName: type === EntityType.GlossaryTerm ? 'Terms' : 'Tags' }) + "!",
                         duration: 2,
                     });
                 }
@@ -298,7 +300,7 @@ export default function EditTagTermsModal({
             .catch((e) => {
                 message.destroy();
                 message.error(
-                    handleBatchError(urns, e, { content: `Failed to add: \n ${e.message || ''}`, duration: 3 }),
+                    handleBatchError(urns, e, { content: `${t('error.addError')}: \n ${e.message || ''}`, duration: 3 }),
                 );
             })
             .finally(() => {
@@ -320,7 +322,7 @@ export default function EditTagTermsModal({
             .then(({ errors }) => {
                 if (!errors) {
                     message.success({
-                        content: `Removed ${type === EntityType.GlossaryTerm ? 'Terms' : 'Tags'}!`,
+                        content: t('crud.removed', { addedName: type === EntityType.GlossaryTerm ? 'Terms' : 'Tags' }) + "!",
                         duration: 2,
                     });
                 }
@@ -328,7 +330,7 @@ export default function EditTagTermsModal({
             .catch((e) => {
                 message.destroy();
                 message.error(
-                    handleBatchError(urns, e, { content: `Failed to remove: \n ${e.message || ''}`, duration: 3 }),
+                    handleBatchError(urns, e, { content: `${t('error.removeError')}: \n ${e.message || ''}`, duration: 3 }),
                 );
             })
             .finally(() => {
@@ -350,7 +352,7 @@ export default function EditTagTermsModal({
             .then(({ errors }) => {
                 if (!errors) {
                     message.success({
-                        content: `Removed ${type === EntityType.GlossaryTerm ? 'Terms' : 'Tags'}!`,
+                        content: t('crud.removed', { addedName: type === EntityType.GlossaryTerm ? 'Terms' : 'Tags' }) + "!",
                         duration: 2,
                     });
                 }
@@ -358,7 +360,7 @@ export default function EditTagTermsModal({
             .catch((e) => {
                 message.destroy();
                 message.error(
-                    handleBatchError(urns, e, { content: `Failed to remove: \n ${e.message || ''}`, duration: 3 }),
+                    handleBatchError(urns, e, { content: `${t('error.removeError')}: \n ${e.message || ''}`, duration: 3 }),
                 );
             })
             .finally(() => {
@@ -430,7 +432,7 @@ export default function EditTagTermsModal({
 
     return (
         <Modal
-            title={`${operationType === OperationType.ADD ? 'Add' : 'Remove'} ${entityRegistry.getEntityName(type)}s`}
+            title={`${operationType === OperationType.ADD ? t('common.add') : t('common.remove') + ' ' + t(entityRegistry.getEntityType(type), { ns: 'entity', count: 2 })}`}
             visible={visible}
             onCancel={onCloseModal}
             footer={

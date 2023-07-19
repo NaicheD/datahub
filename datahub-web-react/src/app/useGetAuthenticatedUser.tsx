@@ -1,6 +1,7 @@
 import Cookies from 'js-cookie';
 import { CLIENT_AUTH_COOKIE } from '../conf/Global';
 import { useGetMeQuery } from '../graphql/me.generated';
+import {useTranslation} from 'react-i18next';
 
 /**
  * Fetch a CorpUser object corresponding to the currently authenticated user.
@@ -8,8 +9,9 @@ import { useGetMeQuery } from '../graphql/me.generated';
 export function useGetAuthenticatedUser(skip?: boolean) {
     const userUrn = Cookies.get(CLIENT_AUTH_COOKIE);
     const { data, error } = useGetMeQuery({ skip: skip || !userUrn, fetchPolicy: 'cache-and-network' });
+    const {t} = useTranslation();
     if (error) {
-        console.error(`Could not fetch logged in user from cache. + ${error.message}`);
+        console.error(t('user.error.noUserInCache') + error.message);
     }
     return data?.me;
 }
@@ -19,8 +21,9 @@ export function useGetAuthenticatedUser(skip?: boolean) {
  */
 export function useGetAuthenticatedUserUrn() {
     const userUrn = Cookies.get(CLIENT_AUTH_COOKIE);
+    const {t} = useTranslation('translation');
     if (!userUrn) {
-        throw new Error('Could not find logged in user.');
+        throw new Error(t('user.error.noUserConnected'));
     }
     return userUrn;
 }

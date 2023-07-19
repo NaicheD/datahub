@@ -1,7 +1,5 @@
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
-import * as en from './conf/locales/en/dukeI18n.json';
-import * as fr from './conf/locales/fr/dukeI18n.json';
 
 // import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -24,9 +22,9 @@ i18n
     .init({
         fallbackLng: 'en',
         debug: true,
-        defaultNs: 'dukeI18n',
-        fallbackNs: 'dukeI18n',
-        ns: ['dukeI18n'],
+        defaultNs: 'translation',
+        fallbackNs: 'translation',
+        ns: ['translation'],
         backend: {
             loadPath: '/conf/locales/{{lng}}/{{ns}}.json',
             allowMultiLoading: true,

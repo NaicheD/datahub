@@ -1,0 +1,49 @@
+{
+    "validateMessages": {
+        "default": "Erreur de validation",
+        "required": "Requis",
+        "enum": "Doit être parmis [${enum}]",
+        "whitespace": "Ne peut pas être vide",
+        "date": {
+            "format": "Format de date invalide",
+            "parse": "Ne peut pas être traduit en date",
+            "invalid": "Date invalide"
+        },
+        "types": {
+            "string": "Type invalide",
+            "method": "Type invalide",
+            "array": "Type invalide",
+            "object": "Type invalide",
+            "number": "Type invalide",
+            "date": "Type invalide",
+            "boolean": "Type invalide",
+            "integer": "Type invalide",
+            "float": "Type invalide",
+            "regexp": "Type invalide",
+            "email": "Type invalide",
+            "url": "Type invalide",
+            "hex": "Type invalide"
+        },
+        "string": {
+            "len": "Doit faire ${len} caractères",
+            "min": "'Doit faire au moins ${min} caractères",
+            "max": "'Ne peut pas dépasser ${max} caractères",
+            "range": "Doit faire entre ${min} et ${max} caractères"
+        },
+        "number": {
+            "len": "Doit être égal à ${len}",
+            "min": "Ne peut pas être inférieur à ${min}",
+            "max": "Ne peut pas être supérieur à ${max}",
+            "range": "Doit être entre ${min} et ${max}"
+        },
+        "array": {
+            "len": "Doit avoir ${len} éléments",
+            "min": "Doit avoir au moins ${min} éléments",
+            "max": "Doit avoir ${max} éléments au maximum",
+            "range": " Doit avoir entre ${min} et ${max} éléments"
+        },
+        "pattern": {
+            "mismatch": "Ne correspond pas au pattern ${pattern}"
+        }
+    }
+}

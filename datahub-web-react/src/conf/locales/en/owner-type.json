@@ -1,0 +1,18 @@
+{
+    "TECHNICAL_OWNER": {
+        "name": "Technical Owner",
+        "description": "Involved in the production, maintenance, or distribution of the asset."
+    },
+    "BUSINESS_OWNER": {
+        "name": "Business Owner",
+        "description": "Principle stakeholders or domain experts associated with the asset."
+    },
+    "DATA_STEWARD": {
+        "name": "Data Steward",
+        "description": "Involved in governance of the asset."
+    },
+    "NONE": {
+        "name": "None",
+        "description": "No ownership type specified."
+    }
+}

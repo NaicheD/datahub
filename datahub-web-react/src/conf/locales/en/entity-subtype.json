@@ -1,0 +1,58 @@
+{
+    "custom sql": {
+        "singular": "Custom SQL",
+        "plural": "Custom SQL"
+    },
+    "workbook": {
+        "singular": "Workbook",
+        "plural": "Workbooks"
+    },
+    "embedded data source": {
+        "singular": "Embedded Data Source",
+        "plural": "Embedded Data Sources"
+    },
+    "published data source": {
+        "singular": "Published Data Source",
+        "plural": "Published Data Sources"
+    },
+    "topic": {
+        "singular": "Topic",
+        "plural": "Topics"
+    },
+    "table": {
+        "singular": "Table",
+        "plural": "Tables"
+    },
+    "view": {
+        "singular": "View",
+        "plural": "Views"
+    },
+    "model": {
+        "singular": "Model",
+        "plural": "Models"
+    },
+    "explore": {
+        "singular": "Explore",
+        "plural": "Explores"
+    },
+    "index": {
+        "singular": "Index",
+        "plural": "Index"
+    },
+    "datastream": {
+        "singular": "DataStream",
+        "plural": "DataStreams"
+    },
+    "entity": {
+        "singular": "Entity",
+        "plural": "Entities"
+    },
+    "schema": {
+        "singular": "Schema",
+        "plural": "Schemas"
+    },
+    "database": {
+        "singular": "Database",
+        "plural": "Databases"
+    }
+}

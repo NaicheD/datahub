@@ -1,0 +1,30 @@
+{
+    "documentation": {
+        "title": "Pas encore de documentation",
+        "description": "Partagez vos connaissances en ajoutant de la documentations et des liens vers des ressources utiles."
+    },
+    "tags": {
+        "title": "Pas encore de tags",
+        "description": "Tagguez les entités pour faciliter leur recherche et mettre en valeur leurs attributs les plus importants."
+    },
+    "terms": {
+        "title": "Pas encore de termes",
+        "description": "Appliquez des termes aux entités pour classer leur données."
+    },
+    "owners": {
+        "title": "Pas encore de propriétaires",
+        "description": "Ajoutez des propriétaires pour savoir qui est responsable de ces données."
+    },
+    "properties": {
+        "title": "Pas encore de propriétés",
+        "description": "Les propriétes apparaitrons si elles existent dans votre source de données."
+    },
+    "queries": {
+        "title": "Pas encore de requêtes",
+        "description": "Les requêtes récemment effectuées sur ce jeu de donnée s'afficheront ici."
+    },
+    "domain": {
+        "title": "N'appartient à aucun domaine",
+        "description": "Groupez vos entités sous un même Domaine pour améliorer votre organisation."
+    }
+}

@@ -24,6 +24,7 @@ import { EntityMenuItems } from '../entity/shared/EntityDropdown/EntityDropdown'
 import { ErrorSection } from './error/ErrorSection';
 import { generateOrFilters } from '../search/utils/generateOrFilters';
 import { ENTITY_FILTER_NAME, UnionType } from '../search/utils/constants';
+import {useTranslation} from 'react-i18next';
 
 function useWrappedSearchResults(params: GetSearchResultsParams) {
     const { data, loading, error } = useGetSearchResultsForMultipleQuery(params);
@@ -181,6 +182,7 @@ const generateColor = new ColorHash({
  * Responsible for displaying metadata about a tag
  */
 export default function TagStyleEntity({ urn, useGetSearchResults = useWrappedSearchResults }: Props) {
+    const {t} = useTranslation('translation');
     const history = useHistory();
     const entityRegistry = useEntityRegistry();
     const { error, data, refetch } = useGetTagQuery({ variables: { urn } });
@@ -238,12 +240,12 @@ export default function TagStyleEntity({ urn, useGetSearchResults = useWrappedSe
                     },
                 });
                 message.destroy();
-                message.success({ content: 'Color Saved!', duration: 2 });
+                message.success({ content: t('tagTerm.colorSavedSuccess'), duration: 2 });
                 setDisplayColorPicker(false);
             } catch (e: unknown) {
                 message.destroy();
                 if (e instanceof Error) {
-                    message.error({ content: `Failed to save tag color: \n ${e.message || ''}`, duration: 2 });
+                    message.error({ content: `${t('tagTerm.colorSavedFailed')}: \n ${e.message || ''}`, duration: 2 });
                 }
             }
             refetch?.();
@@ -299,11 +301,11 @@ export default function TagStyleEntity({ urn, useGetSearchResults = useWrappedSe
 
     // Save the description
     const handleSaveDescription = async (desc: string) => {
-        message.loading({ content: 'Saving...' });
+        message.loading({ content: t('common.saving') + '...' });
         try {
             await updateDescriptionValue(desc);
             message.destroy();
-            message.success({ content: 'Description Updated', duration: 2 });
+            message.success({ content: t('entityPage.descriptionUpdated'), duration: 2 });
             analytics.event({
                 type: EventType.EntityActionEvent,
                 actionType: EntityActionType.UpdateDescription,
@@ -313,7 +315,7 @@ export default function TagStyleEntity({ urn, useGetSearchResults = useWrappedSe
         } catch (e: unknown) {
             message.destroy();
             if (e instanceof Error) {
-                message.error({ content: `Failed to update description: \n ${e.message || ''}`, duration: 2 });
+                message.error({ content: `${t('entityPage.descriptionUpdateFailed')}: \n ${e.message || ''}`, duration: 2 });
             }
         }
         refetch?.();
@@ -325,7 +327,7 @@ export default function TagStyleEntity({ urn, useGetSearchResults = useWrappedSe
             {/* Tag Title */}
             <TagHeader>
                 <div>
-                    <TitleLabel>Tag</TitleLabel>
+                    <TitleLabel>{t('common.tag')}</TitleLabel>
                     <TagName>
                         <ColorPicker>
                             <ColorPickerButton style={{ backgroundColor: colorValue }} onClick={handlePickerClick} />
@@ -352,27 +354,27 @@ export default function TagStyleEntity({ urn, useGetSearchResults = useWrappedSe
             </TagHeader>
             <Divider />
             {/* Tag Description */}
-            <DescriptionLabel>About</DescriptionLabel>
+            <DescriptionLabel>{t('common.about')}</DescriptionLabel>
             <Paragraph
                 style={{ fontSize: '12px', lineHeight: '15px', padding: '5px 0px' }}
                 editable={{ onChange: handleSaveDescription }}
-                ellipsis={{ rows: 2, expandable: true, symbol: 'Read more' }}
+                ellipsis={{ rows: 2, expandable: true, symbol: t('common.readMore') }}
             >
-                {updatedDescription || <EmptyValue />}
+                {updatedDescription || <EmptyValue>{t('common.none')}</EmptyValue>}
             </Paragraph>
             <Divider />
             {/* Tag Charts, Datasets and Owners */}
             <DetailsLayout>
                 <StatsBox>
-                    <StatsLabel>Applied to</StatsLabel>
+                    <StatsLabel>{t('common.appliedTo')}</StatsLabel>
                     {facetLoading && (
                         <div>
-                            <EmptyStatsText>Loading...</EmptyStatsText>
+                            <EmptyStatsText>{t('common.loading')}...</EmptyStatsText>
                         </div>
                     )}
                     {!facetLoading && aggregations && aggregations?.length === 0 && (
                         <div>
-                            <EmptyStatsText>No entities</EmptyStatsText>
+                            <EmptyStatsText>{t('entityPage.noEntities')}</EmptyStatsText>
                         </div>
                     )}
                     {!facetLoading &&
@@ -409,7 +411,7 @@ export default function TagStyleEntity({ urn, useGetSearchResults = useWrappedSe
                         })}
                 </StatsBox>
                 <div>
-                    <StatsLabel>Owners</StatsLabel>
+                    <StatsLabel>{t('common.owners')}</StatsLabel>
                     <div>
                         {data?.tag?.ownership?.owners?.map((owner) => (
                             <ExpandedOwner entityUrn={urn} owner={owner} refetch={refetch} hidePopOver />
@@ -422,9 +424,9 @@ export default function TagStyleEntity({ urn, useGetSearchResults = useWrappedSe
                         <Button type={ownersEmpty ? 'default' : 'text'} onClick={() => setShowAddModal(true)}>
                             <PlusOutlined />
                             {ownersEmpty ? (
-                                <OwnerButtonEmptyTitle>Add Owners</OwnerButtonEmptyTitle>
+                                <OwnerButtonEmptyTitle>{t('entityPage.addOwners')}</OwnerButtonEmptyTitle>
                             ) : (
-                                <OwnerButtonTitle>Add Owners</OwnerButtonTitle>
+                                <OwnerButtonTitle>{t('entityPage.addOwners')}</OwnerButtonTitle>
                             )}
                         </Button>
                     </div>

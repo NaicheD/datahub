@@ -6,6 +6,7 @@ import { InfoCircleOutlined } from '@ant-design/icons';
 import TagStyleEntity from '../TagStyleEntity';
 import { useEntityRegistry } from '../../useEntityRegistry';
 import { EntityType } from '../../../types.generated';
+import {useTranslation} from 'react-i18next';
 
 type Props = {
     closeTagProfileDrawer?: () => void;
@@ -19,6 +20,7 @@ const DetailsLayout = styled.div`
 `;
 
 export const TagProfileDrawer = ({ closeTagProfileDrawer, tagProfileDrawerVisible, urn }: Props) => {
+    const {t} = useTranslation('translation');
     const entityRegistry = useEntityRegistry();
     return (
         <>
@@ -32,12 +34,12 @@ export const TagProfileDrawer = ({ closeTagProfileDrawer, tagProfileDrawerVisibl
                     <DetailsLayout>
                         <Space>
                             <Button type="text" onClick={closeTagProfileDrawer}>
-                                Close
+                                {t('common.close')}
                             </Button>
                         </Space>
                         <Space>
                             <Button href={entityRegistry.getEntityUrl(EntityType.Tag, urn)}>
-                                <InfoCircleOutlined /> Tag Details
+                                <InfoCircleOutlined /> {t('tagTerm.tadDetails')}
                             </Button>
                         </Space>
                     </DetailsLayout>

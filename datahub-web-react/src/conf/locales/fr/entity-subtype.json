@@ -1,0 +1,58 @@
+{
+    "custom sql": {
+        "singular": "Custom SQL",
+        "plural": "Custom SQL"
+    },
+    "workbook": {
+        "singular": "Workbook",
+        "plural": "Workbooks"
+    },
+    "embedded data source": {
+        "singular": "Source de donnée embarquée",
+        "plural": "Sources de donnée embarquées"
+    },
+    "published data source": {
+        "singular": "Source de donnée publiée",
+        "plural": "Sources de donnée publiées"
+    },
+    "topic": {
+        "singular": "Topic",
+        "plural": "Topics"
+    },
+    "table": {
+        "singular": "Table",
+        "plural": "Tables"
+    },
+    "view": {
+        "singular": "Vue",
+        "plural": "Vues"
+    },
+    "model": {
+        "singular": "Modèle",
+        "plural": "Modèles"
+    },
+    "explore": {
+        "singular": "Explore",
+        "plural": "Explores"
+    },
+    "index": {
+        "singular": "Index",
+        "plural": "Index"
+    },
+    "datastream": {
+        "singular": "Flux de donnée",
+        "plural": "Flux de données"
+    },
+    "entity": {
+        "singular": "Entité",
+        "plural": "Entités"
+    },
+    "schema": {
+        "singular": "Schema",
+        "plural": "Schemas"
+    },
+    "database": {
+        "singular": "Base de donnée",
+        "plural": "Bases de donnée"
+    }
+}

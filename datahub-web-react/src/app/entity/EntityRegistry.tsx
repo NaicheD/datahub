@@ -82,6 +82,11 @@ export default class EntityRegistry {
         return entity.getEntityName?.();
     }
 
+    getEntityType(type: EntityType): string {
+        const entity = validatedGet(type, this.entityTypeToEntity);
+        return entity.type;
+    }
+
     getTypeFromCollectionName(name: string): EntityType {
         return validatedGet(name, this.collectionNameToEntityType);
     }
