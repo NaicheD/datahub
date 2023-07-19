@@ -1,74 +1,38 @@
 {
-    "DOMAIN": {
-        "singular": "Domaine",
-        "plural": "Domaines"
-    },
-    "DATASET": {
-        "singular": "Jeu de donnée",
-        "plural": "Jeux de donnée"
-    },
-    "CORP_USER": {
-        "singular": "Utilisateur",
-        "plural": "Utilisateurs"
-    },
-    "CORP_GROUP": {
-        "singular": "Groupe",
-        "plural": "Groupes"
-    },
-    "DATA_PLATFORM": {
-        "singular": "Platforme de donnée",
-        "plural": "Platformes de donnée"
-    },
-    "DASHBOARD": {
-        "singular": "Tableau de bord",
-        "plural": "Tableaux de bord"
-    },
-    "CHART": {
-        "singular": "Graphique",
-        "plural": "Graphiques"
-    },
-    "DATA_FLOW": {
-        "singular": "Flux de données",
-        "plural": "Flux de données"
-    },
-    "DATA_JOB": {
-        "singular": "Travail",
-        "plural": "Travaux"
-    },
-    "TAG": {
-        "singular": "Tag",
-        "plural": "Tags"
-    },
-    "GLOSSARY_TERM": {
-        "singular": "Terme du glossaire",
-        "plural": "Termes du glossaire"
-    },
-    "GLOSSARY_NODE": {
-        "singular": "Groupe de terme",
-        "plural": "Groupes de terme"
-    },
-    "CONTAINER": {
-        "singular": "Conteneur",
-        "plural": "Conteneurs"
-    },
-    "MLMODEL": {
-        "singular": "Modèle Ml",
-        "plural": "Modèles ML"
-    },
-    "MLMODEL_GROUP": {
-        "singular": "Groupe de modèle ML",
-        "plural": "Groupes de modèles ML"
-    },
-    "MLFEATURE_TABLE": {
-        "singular": "Table de fature ML",
-        "plural": "Tables de feature ML"
-    },
-    "MLFEATURE": {
-        "singular": "Feature ML",
-        "plural": "Features ML"
-    },
-    "MLPRIMARY_KEY": {
-        "singular": "Clef primaire ML",
-        "plural": "Clefs primaires ML"
-    }
+    "DOMAIN_one": "Domaine",
+    "DOMAIN_other": "Domaines",
+    "DATASET_one": "Jeu de donnée",
+    "DATASET_other": "Jeux de donnée",
+    "CORP_USER_one": "Utilisateur",
+    "CORP_USER_other": "Utilisateurs",
+    "CORP_GROUP_one": "Groupe",
+    "CORP_GROUP_other": "Groupes",
+    "DATA_PLATFORM_one": "Platforme de donnée",
+    "DATA_PLATFORM_other": "Platformes de donnée",
+    "DASHBOARD_one": "Tableau de bord",
+    "DASHBOARD_other": "Tableaux de bord",
+    "CHART_one": "Graphique",
+    "CHART_other": "Graphiques",
+    "DATA_FLOW_one": "Flux de données",
+    "DATA_FLOW_other": "Flux de données",
+    "DATA_JOB_one": "Travail",
+    "DATA_JOB_other": "Travaux",
+    "TAG_one": "Tag",
+    "TAG_other": "Tags",
+    "GLOSSARY_TERM_one": "Terme du glossaire",
+    "GLOSSARY_TERM_other": "Termes du glossaire",
+    "GLOSSARY_NODE_one": "Groupe de terme",
+    "GLOSSARY_NODE_other": "Groupes de terme",
+    "CONTAINER_one": "Conteneur",
+    "CONTAINER_other": "Conteneurs",
+    "MLMODEL_one": "Modèle Ml",
+    "MLMODEL_other": "Modèles ML",
+    "MLMODEL_GROUP_one": "Groupe de modèle ML",
+    "MLMODEL_GROUP_other": "Groupes de modèles ML",
+    "MLFEATURE_TABLE_one": "Table de fature ML",
+    "MLFEATURE_TABLE_other": "Tables de feature ML",
+    "MLFEATURE_one": "Feature ML",
+    "MLFEATURE_other": "Features ML",
+    "MLPRIMARY_KEY_one": "Clef primaire ML",
+    "MLPRIMARY_KEY_other": "Clefs primaires ML"
 }

@@ -8,6 +8,7 @@ import { StyledTag } from '../../../entity/shared/components/styled/StyledTag';
 import { HoverEntityTooltip } from '../../../recommendations/renderer/component/HoverEntityTooltip';
 import { useEntityRegistry } from '../../../useEntityRegistry';
 import { TagProfileDrawer } from '../TagProfileDrawer';
+import {useTranslation} from 'react-i18next';
 
 const TagLink = styled.span`
     display: inline-block;
@@ -39,6 +40,7 @@ export default function Tag({
     refetch,
     fontSize,
 }: Props) {
+    const {t} = useTranslation('translation');
     const entityRegistry = useEntityRegistry();
     const [removeTagMutation] = useRemoveTagMutation();
 
@@ -60,8 +62,8 @@ export default function Tag({
         const tagToRemove = tagAssociationToRemove.tag;
         onOpenModal?.();
         Modal.confirm({
-            title: `Do you want to remove ${tagToRemove?.name} tag?`,
-            content: `Are you sure you want to remove the ${tagToRemove?.name} tag?`,
+            title: t('tagTerm.tagTermModal.removeTag', { tagName: tagToRemove?.name }),
+            content: t('tagTerm.tagTermModal.content', { tagName: tagToRemove?.name }),
             onOk() {
                 if (tagAssociationToRemove.associatedUrn || entityUrn) {
                     removeTagMutation({
@@ -76,18 +78,18 @@ export default function Tag({
                     })
                         .then(({ errors }) => {
                             if (!errors) {
-                                message.success({ content: 'Removed Tag!', duration: 2 });
+                                message.success({ content: t('tagTerm.tagTermModal.success'), duration: 2 });
                             }
                         })
                         .then(refetch)
                         .catch((e) => {
                             message.destroy();
-                            message.error({ content: `Failed to remove tag: \n ${e.message || ''}`, duration: 3 });
+                            message.error({ content: `${t('tagTerm.tagTermModal.error')}: \n ${e.message || ''}`, duration: 3 });
                         });
                 }
             },
             onCancel() {},
-            okText: 'Yes',
+            okText: t('common.yes'),
             maskClosable: true,
             closable: true,
         });

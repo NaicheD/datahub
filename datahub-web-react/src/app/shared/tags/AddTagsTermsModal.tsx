@@ -459,7 +459,7 @@ export default function EditTagTermsModal({
                     mode="multiple"
                     ref={inputEl}
                     filterOption={false}
-                    placeholder={`Search for ${entityRegistry.getEntityName(type)?.toLowerCase()}...`}
+                    placeholder={`${t('search.searchFor')} ${t(entityRegistry.getEntityType(type), { ns: 'entity', count: 1 }).toLowerCase()}...`}
                     showSearch
                     defaultActiveFirstOption={false}
                     onSelect={(asset: any) => onSelectValue(asset)}
