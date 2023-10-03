@@ -638,6 +638,10 @@
       "startWith": "start with"
     },
     "view": {
+      "saveViewTooltipHeader": "Save these filters as a new View.",
+      "saveViewTooltipDescription": "Views allow you to easily save or share search filters.",
+      "saveViewButtonLabel": "Save as a View",
+      "saveViewCombinationError": "This combination of filters cannot be saved as a View at this time.",
       "descriptionDescription": "Write a description for your View.",
       "exitViewEditor": "Exit View Editor",
       "exitViewEditorConfirm": "Are you sure you want to exit View editor? All changes will be lost",

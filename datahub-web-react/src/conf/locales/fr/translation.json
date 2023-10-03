@@ -638,6 +638,10 @@
       "startWith": "commence par"
     },
     "view": {
+      "saveViewTooltipHeader": "Enregistrez ces filtres comme nouvelle Vue.",
+      "saveViewTooltipDescription": "Les Vues vous permettent d'enregistrer et de partager des filtres pour vos recherches.",
+      "saveViewButtonLabel": "Enregistrer comme Vue",
+      "saveViewCombinationError": "Cette combinaison de filtres ne peut pas être enregistrée en Vue pour le moment.",
       "descriptionDescription": "Rédigez une description pour votre Vue.",
       "exitViewEditor": "Quitter l'Editeur de Vue",
       "exitViewEditorConfirm": "Etes-vous sûr(e) de vouloir quitter l'Editeur de Vue ? Toutes vos modifications seront perdues.",
