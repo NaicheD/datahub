@@ -620,8 +620,8 @@
       "true": "est"
     },
     "isOf": {
-      "false": "n'est aucun de",
-      "true": "est l'un de"
+      "false": "n'est pas à",
+      "true": "est à"
     },
     "less": {
       "false": "est supérieur ou égal à",

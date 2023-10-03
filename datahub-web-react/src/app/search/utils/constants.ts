@@ -131,6 +131,10 @@ export const FIELD_TO_LABEL: { [key: string]: { name: string; transKey: string; 
         name: 'Entity Type',
         transKey: 'common.entityType',
     },
+    type: {
+        name: 'Type',
+        transKey: 'common.type',
+    },
     container: {
         name: 'Container',
         transKey: 'common.container',
