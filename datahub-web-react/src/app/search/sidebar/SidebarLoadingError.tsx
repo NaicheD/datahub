@@ -21,7 +21,7 @@ const SidebarLoadingError = ({ onClickRetry }: Props) => {
             action={
                 onClickRetry && (
                     <Button size="small" danger onClick={onClickRetry}>
-                        {t('common.retry')}Retry
+                        {t('common.retry')}
                     </Button>
                 )
             }

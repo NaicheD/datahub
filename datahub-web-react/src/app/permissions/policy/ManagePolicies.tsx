@@ -474,7 +474,7 @@ export const ManagePolicies = () => {
                     </div>
                     <SearchBar
                         initialQuery={query || ''}
-                        placeholderText={t('permissions.searchPolicies')}
+                        placeholderText={t('placeholder.searchWithName', { name: t('common.policies') })}
                         suggestions={[]}
                         style={{
                             maxWidth: 220,
