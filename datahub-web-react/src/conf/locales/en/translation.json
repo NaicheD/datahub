@@ -1358,6 +1358,7 @@
     }
   },
   "permissions": {
+    "failedToLoadRoles": "Failed to load roles!",
     "appliesTo": "Applies to",
     "appliesToWithName": "Applies to {{name}}",
     "areYouSureRemovePolicy": "Are you sure you want to remove policy?",
@@ -1399,7 +1400,6 @@
     "privilegesLabel": "Select a set of privileges to permit.",
     "resourceDescription": "Search for specific resources the policy should apply to. If <bold>none</bold> is selected, policy is applied to <bold>all</bold> resources of the given type.",
     "resourceTypeDescription": "Select the types of resources this policy should apply to. If <bold>none</bold> is selected, policy is applied to <bold>all</bold> types of resources.",
-    "searchPolicies": "Search policies...",
     "successfullyActivatedPolicy": "Successfully activated policy.",
     "successfullyDeactivatedPolicy": "Successfully deactivated policy.",
     "successfullyRemovedPolicy": "Successfully removed policy.",

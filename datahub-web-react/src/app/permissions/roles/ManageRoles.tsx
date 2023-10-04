@@ -223,15 +223,15 @@ export const ManageRoles = () => {
         <PageContainer>
             <OnboardingTour stepIds={[ROLES_INTRO_ID]} />
             {rolesLoading && !rolesData && (
-                <Message type="loading" content="Loading roles..." style={{ marginTop: '10%' }} />
+                <Message type="loading" content={`${t('common.loading')}...`} style={{ marginTop: '10%' }} />
             )}
-            {rolesError && message.error('Failed to load roles! An unexpected error occurred.')}
+            {rolesError && message.error(t('permissions.failedToLoadRoles'))}
             <SourceContainer>
                 <TabToolbar>
                     <div />
                     <SearchBar
                         initialQuery={query || ''}
-                        placeholderText="Search roles..."
+                        placeholderText={t('placeholder.searchWithName', { name: t('common.roles') })}
                         hideRecommendations
                         suggestions={[]}
                         style={{
@@ -248,8 +248,8 @@ export const ManageRoles = () => {
                     />
                     {isBatchAddRolesModalVisible && (
                         <SearchSelectModal
-                            titleText={`Assign ${focusRole?.name} Role to Users`}
-                            continueText="Add"
+                            titleText={t('permissions.assignRoleToUsers', { role: focusRole?.name })}
+                            continueText={t('common.add')}
                             onContinue={batchAssignRole}
                             onCancel={resetRoleState}
                             fixedEntityTypes={Array.from(

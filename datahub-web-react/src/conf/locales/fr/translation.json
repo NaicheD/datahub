@@ -1358,6 +1358,7 @@
     }
   },
   "permissions": {
+    "failedToLoadRoles": "Echec du chargement des rôles !",
     "appliesTo": "S'applique à",
     "appliesToWithName": "S'applique à {{name}}",
     "areYouSureRemovePolicy": "Etes-vous sûr(e) de vouloir supprimer ce Droit ?",
@@ -1398,7 +1399,6 @@
     "privilegesLabel": "Choisissez un ensemble de privilèges à accorder.",
     "resourceDescription": "Cherchez des ressources spécifiques auxquelles appliquer ce Droit. Si vous sélectionnez <bold>Aucun</bold>, le droit s'appliquera à <bold>toute</bold> les ressources du type sélectionné.",
     "resourceTypeDescription": "Choisissez le type de ressources auquel appliquer ce Droit. Si vous sélectionnez <bold>Aucun</bold>, le droit s'appliquera à <bold>tout</bold> type de ressource.",
-    "searchPolicies": "Chercher Droit...",
     "successfullyActivatedPolicy": "Droit activé.",
     "successfullyDeactivatedPolicy": "Droit désactivé.",
     "successfullyRemovedPolicy": "Droit supprimé.",
