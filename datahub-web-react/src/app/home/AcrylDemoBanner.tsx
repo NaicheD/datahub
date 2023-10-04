@@ -47,7 +47,7 @@ export default function AcrylDemoBanner() {
                         components: {
                             styledLinkDemo: (
                                 <StyledLink
-                                    href="https://www.acryldata.io/datahub-sign-up"
+                        href="https://www.acryldata.io/datahub-sign-up?utm_source=datahub&utm_medium=referral&utm_campaign=acryl_signup"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 />
