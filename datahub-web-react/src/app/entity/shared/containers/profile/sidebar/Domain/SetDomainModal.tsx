@@ -203,7 +203,7 @@ export const SetDomainModal = ({ urns, onCloseModal, refetch, defaultValue, onOk
                             showSearch
                             mode="multiple"
                             defaultActiveFirstOption={false}
-                            placeholder={t('search;searchForWithName', { name: t('common.domains') })}
+                            placeholder={t('placeholder.searchForWithName', { name: t('common.domains') })}
                             onSelect={(domainUrn: any) => onSelectDomain(domainUrn)}
                             onDeselect={onDeselectDomain}
                             onSearch={(value: string) => {

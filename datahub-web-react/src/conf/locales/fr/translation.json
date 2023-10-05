@@ -1424,7 +1424,7 @@
     "searchByWithName": "Rechercher par {{name}}...",
     "searchFor": "Rechercher",
     "searchForUsersOrGroups": "Rechercher des utilisateurs ou des groupes",
-    "searchForWithName": "Rechercher pour {{name}}...",
+    "searchForWithName": "Rechercher {{name}}...",
     "searchInWithName": "Rechercher dans {{name}}...",
     "searchWithName": "Rechercher {{name}}...",
     "selectAColumn": "Sélectionner une colonne",
