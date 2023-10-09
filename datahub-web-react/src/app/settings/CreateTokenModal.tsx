@@ -158,7 +158,10 @@ export default function CreateTokenModal({ currentUserUrn, visible, onClose, onC
                             ]}
                             hasFeedback
                         >
-                            <Input placeholder={t('settings.aNameForYourToken')} data-testid="create-access-token-name" />
+                            <Input
+                                placeholder={t('settings.aNameForYourToken')}
+                                data-testid="create-access-token-name"
+                            />
                         </Form.Item>
                     </Form.Item>
                     <Form.Item label={<Typography.Text strong>{t('common.description')}</Typography.Text>}>

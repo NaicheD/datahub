@@ -56,9 +56,7 @@ export default function SearchFilter({ filter, activeFilters, onChangeFilters }:
     }
 
     const displayName =
-        (i18n.exists(potentialI18nKey) && t(potentialI18nKey, { count: 1 })) ||
-        filter.displayName ||
-        '';
+        (i18n.exists(potentialI18nKey) && t(potentialI18nKey, { count: 1 })) || filter.displayName || '';
 
     return (
         <SearchFilterView
