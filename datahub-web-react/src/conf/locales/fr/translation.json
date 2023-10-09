@@ -380,7 +380,7 @@
     "addToAssetsWithName": "Ajouter {{name}} aux assets",
     "addWithName": "Ajouter {{name}}",
     "createWithName": "Créer {{name}}",
-    "delete": "Suppression",
+    "delete": "Supprimer",
     "deleteWithName": "Supprimer {{name}}",
     "deleting": "Suppression en cours",
     "doYouWantTo": {

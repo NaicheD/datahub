@@ -85,7 +85,7 @@ export const OwnershipList = () => {
     return (
         <>
             {!data && loading && (
-                <Message type="loading" content={`${t('common.loading')} ${t('common.ownershipTypes')}...`} />
+                <Message type="loading" content={`${t('common.loading')} ${t('settings.ownershipTypes')}...`} />
             )}
             {error &&
                 message.error({
@@ -94,7 +94,7 @@ export const OwnershipList = () => {
                 })}
             <TabToolbar>
                 <Button type="text" onClick={onClickCreateOwnershipType}>
-                    <PlusOutlined /> {t('crud.error.createWithName', { name: t('settings.ownershipType') })}
+                    <PlusOutlined /> {t('crud.createWithName', { name: t('settings.ownershipType') })}
                 </Button>
                 <SearchBar
                     initialQuery=""

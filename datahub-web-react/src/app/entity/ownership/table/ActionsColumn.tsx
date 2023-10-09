@@ -61,7 +61,7 @@ export const ActionsColumn = ({ ownershipType, setIsOpen, setOwnershipType, refe
             .then(() => {
                 notification.success({
                     message: t('common.success'),
-                    description: t('crud.success.deleteWithName', { name: t('common.ownershipType').toLowerCase() }),
+                    description: t('crud.success.deleteWithName', { name: t('settings.ownershipType').toLowerCase() }),
                     placement: 'bottomLeft',
                     duration: 3,
                 });
@@ -73,7 +73,7 @@ export const ActionsColumn = ({ ownershipType, setIsOpen, setOwnershipType, refe
                 message.destroy();
                 if (e instanceof Error) {
                     message.error({
-                        content: t('crud.error.deleteWithName', { name: t('common.ownershipType').toLowerCase() }),
+                        content: t('crud.error.deleteWithName', { name: t('settings.ownershipType').toLowerCase() }),
                         duration: 3,
                     });
                 }

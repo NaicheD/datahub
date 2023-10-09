@@ -104,7 +104,7 @@ export const OwnershipBuilderModal = ({ isOpen, onClose, refetch, ownershipType 
                     notification.success({
                         message: t('common.success'),
                         description: t('crud.success.createWithName', {
-                            name: t('common.ownershipType').toLowerCase(),
+                            name: t('settings.ownershipType').toLowerCase(),
                         }),
                         placement: 'bottomLeft',
                         duration: 3,
@@ -117,7 +117,7 @@ export const OwnershipBuilderModal = ({ isOpen, onClose, refetch, ownershipType 
                     message.destroy();
                     if (e instanceof Error) {
                         message.error({
-                            content: t('crud.error.createWithName', { name: t('common.ownershipType').toLowerCase() }),
+                            content: t('crud.error.createWithName', { name: t('settings.ownershipType').toLowerCase() }),
                             duration: 3,
                         });
                     }
@@ -143,7 +143,7 @@ export const OwnershipBuilderModal = ({ isOpen, onClose, refetch, ownershipType 
                     notification.success({
                         message: t('common.success'),
                         description: t('crud.success.updateWithName', {
-                            name: t('common.ownershipType').toLowerCase(),
+                            name: t('settings.ownershipType').toLowerCase(),
                         }),
                         placement: 'bottomLeft',
                         duration: 3,
@@ -156,7 +156,7 @@ export const OwnershipBuilderModal = ({ isOpen, onClose, refetch, ownershipType 
                     message.destroy();
                     if (e instanceof Error) {
                         message.error({
-                            content: t('crud.error.updateWithName', { name: t('common.ownershipType').toLowerCase() }),
+                            content: t('crud.error.updateWithName', { name: t('settings.ownershipType').toLowerCase() }),
                             duration: 3,
                         });
                     }
@@ -166,8 +166,8 @@ export const OwnershipBuilderModal = ({ isOpen, onClose, refetch, ownershipType 
 
     const onUpsert = ownershipType ? onUpdateOwnershipType : onCreateOwnershipType;
     const titleText = ownershipType
-        ? t('crud.editWithName', { name: t('common.ownershipType').toLowerCase() })
-        : t('crud.addWithName', { name: t('common.ownershipType').toLowerCase() });
+        ? t('crud.editWithName', { name: t('settings.ownershipType').toLowerCase() })
+        : t('crud.addWithName', { name: t('settings.ownershipType').toLowerCase() });
     return (
         <Modal
             open={isOpen}
