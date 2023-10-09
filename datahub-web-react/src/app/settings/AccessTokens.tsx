@@ -213,7 +213,12 @@ export const AccessTokens = () => {
             key: 'x',
             render: (_, record: any) => (
                 <ActionButtonContainer>
-                    <Button onClick={() => onRemoveToken(record)} icon={<DeleteOutlined />} danger>
+                    <Button
+                        onClick={() => onRemoveToken(record)}
+                        icon={<DeleteOutlined />}
+                        danger
+                        data-testid="revoke-token-button"
+                    >
                         {t('common.revoke')}
                     </Button>
                 </ActionButtonContainer>

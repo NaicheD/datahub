@@ -1,7 +1,7 @@
 {
   "title": "DataHub",
   "homepageMessage": "Find data you can count on",
-  "searchbarMessage": "Search Datasets, People, & more...",
+  "searchbarMessage": "Search Tables, Dashboards, People, & more...",
   "menuItems": [
     {
       "label": "Project",

@@ -225,7 +225,7 @@ function EntityDropdown(props: Props) {
                                 disabled={isMoveDisabled(entityType, entityData, me.platformPrivileges)}
                                 onClick={() => setIsMoveModalVisible(true)}
                             >
-                                <MenuItem>
+                                <MenuItem data-testid="entity-menu-move-button">
                                     <FolderOpenOutlined /> &nbsp;{t('common.move')}
                                 </MenuItem>
                             </StyledMenuItem>
@@ -249,7 +249,7 @@ function EntityDropdown(props: Props) {
                                             : undefined
                                     }
                                 >
-                                    <MenuItem>
+                                    <MenuItem data-testid="entity-menu-delete-button">
                                         <DeleteOutlined /> &nbsp;{t('crud.delete')}
                                     </MenuItem>
                                 </Tooltip>

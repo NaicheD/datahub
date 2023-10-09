@@ -211,7 +211,10 @@ export default function CreateDomainModal({ onClose, onCreate }: Props) {
                         rules={[{ whitespace: true }, { min: 1, max: 500 }]}
                         hasFeedback
                     >
-                        <Input.TextArea placeholder={t('placeholder.domainDescription')} />
+                        <Input.TextArea
+                            placeholder={t('placeholder.domainDescription')}
+                            data-testid="create-domain-description"
+                        />
                     </FormItemNoMargin>
                 </FormItemWithMargin>
                 <Collapse ghost>

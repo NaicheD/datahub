@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { AutoCompleteResultForEntity, EntityType, FacetFilterInput, ScenarioType } from '../../types.generated';
 import EntityRegistry from '../entity/EntityRegistry';
 import filterSearchQuery from './utils/filterSearchQuery';
-import { ANTD_GRAY, ANTD_GRAY_V2 } from '../entity/shared/constants';
+import { ANTD_GRAY, ANTD_GRAY_V2, REDESIGN_COLORS } from '../entity/shared/constants';
 import { getEntityPath } from '../entity/shared/containers/profile/utils';
 import { EXACT_SEARCH_PREFIX } from './utils/constants';
 import { useListRecommendationsQuery } from '../../graphql/recommendations.generated';
@@ -21,7 +21,6 @@ import RecommendedOption from './autoComplete/RecommendedOption';
 import SectionHeader, { EntityTypeLabel } from './autoComplete/SectionHeader';
 import { useUserContext } from '../context/useUserContext';
 import { navigateToSearchUrl } from './utils/navigateToSearchUrl';
-import { getQuickFilterDetails } from './autoComplete/quickFilters/utils';
 import ViewAllSearchItem from './ViewAllSearchItem';
 import { ViewSelect } from '../entity/view/select/ViewSelect';
 import { combineSiblingsInAutoComplete } from './utils/combineSiblingsInAutoComplete';
@@ -40,13 +39,14 @@ const StyledSearchBar = styled(Input)`
     &&& {
         border-radius: 70px;
         height: 40px;
-        font-size: 20px;
+        font-size: 14px;
         color: ${ANTD_GRAY[7]};
         background-color: ${ANTD_GRAY_V2[2]};
-    }
-    > .ant-input {
-        font-size: 14px;
-        background-color: ${ANTD_GRAY_V2[2]};
+        border: 2px solid transparent;
+
+        &:focus-within {
+            border: 1.5px solid ${REDESIGN_COLORS.BLUE};
+        }
     }
     > .ant-input::placeholder {
         color: ${ANTD_GRAY_V2[10]};
@@ -207,29 +207,16 @@ export const SearchBar = ({
     const { quickFilters, selectedQuickFilter, setSelectedQuickFilter } = useQuickFiltersContext();
 
     const autoCompleteQueryOptions = useMemo(() => {
-        const query = suggestions.length ? effectiveQuery : '';
-        const selectedQuickFilterLabel =
-            showQuickFilters && selectedQuickFilter
-                ? getQuickFilterDetails(selectedQuickFilter, entityRegistry, t).label
-                : '';
-        const text = query || selectedQuickFilterLabel;
-
-        if (!text) return [];
+        if (effectiveQuery === '') return [];
 
         return [
             {
-                value: `${EXACT_SEARCH_PREFIX}${text}`,
-                label: (
-                    <ViewAllSearchItem
-                        searchLabel={t('search.viewAllResultsFor')}
-                        searchTarget={text}
-                        returnLabel={t('common.return')}
-                    />
-                ),
+                value: `${EXACT_SEARCH_PREFIX}${effectiveQuery}`,
+                label: <ViewAllSearchItem searchTarget={effectiveQuery} />,
                 type: EXACT_AUTOCOMPLETE_OPTION_TYPE,
             },
         ];
-    }, [suggestions.length, effectiveQuery, showQuickFilters, selectedQuickFilter, entityRegistry, t]);
+    }, [effectiveQuery]);
 
     const autoCompleteEntityOptions = useMemo(() => {
         return suggestions.map((suggestion: AutoCompleteResultForEntity) => {
@@ -307,6 +294,22 @@ export const SearchBar = ({
             setSelectedQuickFilter(null);
         }
     }
+
+    const searchInputRef = useRef(null);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            // Support command-k to select the search bar.
+            // 75 is the keyCode for 'k'
+            if ((event.metaKey || event.ctrlKey) && event.keyCode === 75) {
+                (searchInputRef?.current as any)?.focus();
+            }
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
 
     return (
         <AutoCompleteContainer style={style} ref={searchBarWrapperRef}>
@@ -411,6 +414,7 @@ export const SearchBar = ({
                             />
                         </>
                     }
+                    ref={searchInputRef}
                 />
             </StyledAutoComplete>
         </AutoCompleteContainer>
