@@ -122,10 +122,15 @@ export default function CreateTokenModal({ currentUserUrn, visible, onClose, onC
                 onCancel={onModalClose}
                 footer={
                     <>
-                        <Button onClick={onModalClose} type="text">
+                        <Button onClick={onModalClose} type="text" data-testid="cancel-create-access-token-button">
                             {t('common.cancel')}
                         </Button>
-                        <Button id="createTokenButton" onClick={onCreateNewToken} disabled={createButtonEnabled}>
+                        <Button
+                            id="createTokenButton"
+                            onClick={onCreateNewToken}
+                            disabled={createButtonEnabled}
+                            data-testid="create-access-token-button"
+                        >
                             {t('common.create')}
                         </Button>
                     </>
@@ -153,7 +158,7 @@ export default function CreateTokenModal({ currentUserUrn, visible, onClose, onC
                             ]}
                             hasFeedback
                         >
-                            <Input placeholder={t('settings.aNameForYourToken')} />
+                            <Input placeholder={t('settings.aNameForYourToken')} data-testid="create-access-token-name" />
                         </Form.Item>
                     </Form.Item>
                     <Form.Item label={<Typography.Text strong>{t('common.description')}</Typography.Text>}>
@@ -161,12 +166,15 @@ export default function CreateTokenModal({ currentUserUrn, visible, onClose, onC
                             {t('settings.anOptionalDescriptionForYourNewToken')}
                         </Typography.Paragraph>
                         <Form.Item name="description" rules={[{ whitespace: true }, { min: 1, max: 500 }]} hasFeedback>
-                            <Input placeholder={t('aDescriptionForYourToken')} />
+                            <Input
+                                placeholder={t('aDescriptionForYourToken')}
+                                data-testid="create-access-token-description"
+                            />
                         </Form.Item>
                     </Form.Item>
                     <ExpirationSelectContainer>
                         <Typography.Text strong>{t('token.expireIn')}</Typography.Text>
-                        <Form.Item name="duration" noStyle>
+                        <Form.Item name="duration" data-testid="create-access-token-duration" noStyle>
                             <ExpirationDurationSelect>
                                 {ACCESS_TOKEN_DURATIONS.map((duration) => (
                                     <Select.Option

@@ -95,20 +95,6 @@ export function HeaderLinks(props: Props) {
                     </Link>
                 </LinkWrapper>
             )}
-            {showIngestion && (
-                <LinkWrapper>
-                    <Link to="/ingestion">
-                        <Button id={HOME_PAGE_INGESTION_ID} type="text">
-                            <Tooltip title={t('adminHeader.ingestionTitle')}>
-                                <NavTitleContainer>
-                                    <ApiOutlined />
-                                    <NavTitleText>{t('adminHeader.ingestionText')}</NavTitleText>
-                                </NavTitleContainer>
-                            </Tooltip>
-                        </Button>
-                    </Link>
-                </LinkWrapper>
-            )}
             <Dropdown
                 trigger={['click']}
                 overlay={
@@ -147,6 +133,20 @@ export function HeaderLinks(props: Props) {
                     </Button>
                 </LinkWrapper>
             </Dropdown>
+            {showIngestion && (
+                <LinkWrapper>
+                    <Link to="/ingestion">
+                        <Button id={HOME_PAGE_INGESTION_ID} type="text">
+                            <Tooltip title={t('adminHeader.ingestionTitle')}>
+                                <NavTitleContainer>
+                                    <ApiOutlined />
+                                    <NavTitleText>{t('adminHeader.ingestionText')}</NavTitleText>
+                                </NavTitleContainer>
+                            </Tooltip>
+                        </Button>
+                    </Link>
+                </LinkWrapper>
+            )}
             {showSettings && (
                 <LinkWrapper style={{ marginRight: 12 }}>
                     <Link to="/settings">
