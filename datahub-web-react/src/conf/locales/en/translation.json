@@ -654,7 +654,8 @@
       "saveTheseFiltersAsANewView": "Save these filters as a new View.",
       "typeDescription": "Select the type of your new View.",
       "viewsAllowYouToEasilySaveOrShareSearchFilters": "Views allow you to easily save or share search filters.",
-      "visibleToEveryone": "visible to everyone."
+      "visibleToEveryone": "visible to everyone.",
+      "noViews": "No Views"
     }
   },
   "form": {

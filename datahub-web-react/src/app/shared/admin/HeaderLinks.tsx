@@ -71,7 +71,7 @@ export function HeaderLinks(props: Props) {
     const isAnalyticsEnabled = config?.analyticsConfig.enabled;
     const isIngestionEnabled = config?.managedIngestionConfig.enabled;
 
-    const showAnalytics = (isAnalyticsEnabled && me && me?.platformPrivileges?.viewAnalytics) || false;
+    const showAnalytics = (isAnalyticsEnabled && me && me?.platformPrivileges?.viewAnalytics);
     const showSettings = true;
     const showIngestion =
         isIngestionEnabled && me && me.platformPrivileges?.manageIngestion && me.platformPrivileges?.manageSecrets;
