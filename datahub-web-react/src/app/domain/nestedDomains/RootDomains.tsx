@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import { Message } from '../../shared/Message';
 import { ResultWrapper } from '../../search/SearchResultList';
 import { useEntityRegistry } from '../../useEntityRegistry';
@@ -13,12 +14,13 @@ const DomainsWrapper = styled.div`
 
 export default function RootDomains() {
     const entityRegistry = useEntityRegistry();
+    const { t } = useTranslation();
     const { loading, error, data, sortedDomains } = useListDomains({});
 
     return (
         <>
-            {!data && loading && <Message type="loading" content="Loading domains..." />}
-            {error && <Message type="error" content="Failed to load domains. An unexpected error occurred." />}
+            {!data && loading && <Message type="loading" content={t('common.loading')} />}
+            {error && <Message type="error" content={t('crud.error.loadWithName', { name: t('common.domains') })} />}
             <DomainsWrapper>
                 {sortedDomains?.map((domain) => (
                     <ResultWrapper showUpdatedStyles>

@@ -1,6 +1,7 @@
 import { Alert } from 'antd';
 import React from 'react';
 import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
 import useListDomains from '../../useListDomains';
 import DomainNode from './DomainNode';
 import { Domain } from '../../../../types.generated';
@@ -18,11 +19,12 @@ interface Props {
 }
 
 export default function DomainNavigator({ domainUrnToHide, selectDomainOverride }: Props) {
+    const { t } = useTranslation();
     const { sortedDomains, error } = useListDomains({});
 
     return (
         <NavigatorWrapper>
-            {error && <Alert message="Loading Domains failed." showIcon type="error" />}
+            {error && <Alert message={t('crud.error.loadWithName', { name: t('common.domains') })} showIcon type="error" />}
             {sortedDomains?.map((domain) => (
                 <DomainNode
                     key={domain.urn}
