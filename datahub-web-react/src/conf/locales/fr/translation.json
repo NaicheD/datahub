@@ -654,7 +654,8 @@
       "saveTheseFiltersAsANewView": "Enregistrer ces filtres en tant que nouvelle Vue.",
       "typeDescription": "Sélectionnez le type de votre nouvelle Vue.",
       "viewsAllowYouToEasilySaveOrShareSearchFilters": "Les Vues vous permettent d'enregistrer ou de partager facilement les filtres de recherche.",
-      "visibleToEveryone": "visible par tout le monde."
+      "visibleToEveryone": "visible par tout le monde.",
+      "noViews": "No Views"
     }
   },
   "form": {
